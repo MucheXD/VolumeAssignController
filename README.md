@@ -4,6 +4,12 @@ This is a simple program that allows you to assign or unassign a volume in a sim
 
 *Since MucheXD is a native Chinese speaker. In case of conflict, please refer to the instructions [in Chinese](README_ZH.md).*
 
+**This project is not part of MucheXD's schedule, so there are many potential issues.**
+
+## Screenshot
+
+![Screenshot](Screenshot.png)
+
 ## How To Use
 
 ### Configurations
