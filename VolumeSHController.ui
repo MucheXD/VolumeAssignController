@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VolumeSHControllerClass</class>
+ <widget class="QMainWindow" name="VolumeSHControllerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VolumeSHController</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*基础背景与字体*/
+/*background&amp;font*/
+
+QWidget
+{
+	background-color: hsl(210, 50%, 98%);
+	font: 10pt &quot;Microsoft YaHei UI&quot;;
+}
+
+/*通用普通按钮*/
+/*Normal Push Button*/
+
+QPushButton,QToolButton
+{
+	color: hsl(0, 0%, 10%);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: hsl(210, 5%, 90%);
+	background-color: hsl(210, 5%, 100%);
+	padding: 4px 10px 4px 10px;
+}
+QPushButton:hover,QToolButton:hover
+{
+	color: hsl(0, 0%, 5%);
+	border-color: hsl(210, 10%, 88%);
+	background-color: hsl(210, 10%, 98%);
+}
+QPushButton:pressed,QToolButton:pressed
+{
+	color: hsl(0, 0%, 0%);
+	border-color: hsl(210, 15%, 85%);
+	background-color: hsl(210, 15%, 95%);
+}
+QPushButton:disabled,QToolButton:disabled
+{
+	color: hsl(210, 0%, 60%);
+	border-width: 0px;
+	/*border-color: hsl(210, 0%, 85%);*/
+	background-color: hsl(210, 0%, 95%);
+}
+
+/*通用高亮按钮*/
+/*Highlighted Push Button*/
+
+QPushButton[isHighlighted=true],QToolButton[isHighlighted=true]
+{
+	color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: hsl(210, 100%, 30%);
+	background-color: hsl(210, 100%, 40%);
+}
+QPushButton[isHighlighted=true]:hover,QToolButton[isHighlighted=true]:hover
+{
+	border-color: hsl(210, 80%, 35%);
+	background-color: hsl(210, 80%, 45%);
+}
+QPushButton[isHighlighted=true]:pressed,QToolButton[isHighlighted=true]:pressed
+{
+	border-color: hsl(210, 60%, 40%);
+	background-color: hsl(210, 60%, 50%);
+}
+QPushButton[isHighlighted=true]:disabled,QToolButton[isHighlighted=true]:disabled
+{
+	color: hsl(210, 0%, 100%);
+	border-width: 0px;
+	/*border-color: hsl(210, 0%, 60%);*/
+	background-color: hsl(210, 0%, 70%);
+}
+
+/*工具菜单按钮附件*/
+/*Tool Button SP*/
+
+
+/*通用列表控件*/
+/*QListWidget*/
+
+QListWidget {
+    show-decoration-selected: 0;
+}
+QListWidget::item:hover {
+    background-color: hsl(210, 15%, 95%);
+}
+
+/*通用行编辑框*/
+/*Line Edit*/
+
+QLineEdit
+{
+	color: hsl(0, 0%, 10%);
+	selection-color: hsl(0, 0%, 100%);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: hsl(210, 5%, 90%);
+	background-color: hsl(210, 5%, 100%);
+	selection-background-color: hsl(210, 100%, 40%);
+	padding: 0px 0px 0px 5px;
+}
+QLineEdit:hover
+{
+	color: hsl(0, 0%, 5%);
+	border-color: hsl(210, 10%, 88%);
+	background-color: hsl(210, 10%, 98%);
+}
+QLineEdit:focus
+{
+	border-bottom-color: hsl(210, 100%, 40%);
+}
+QLineEdit:disabled
+{
+	color: hsl(210, 0%, 60%);
+	border-color: hsl(210, 0%, 85%);
+	background-color: hsl(210, 0%, 95%);
+}
+QLineEdit:read-only
+{
+	border-color: hsl(210, 0%, 95%);
+	background-color: hsl(210, 0%, 98%);
+}
+
+/*组合框及其附件*/
+/*Combo box*/
+
+QComboBox
+{
+	color: hsl(0, 0%, 10%);
+	selection-color: hsl(0, 0%, 100%);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: hsl(210, 5%, 90%);
+	background-color: hsl(210, 5%, 100%);
+	selection-background-color: hsl(210, 100%, 40%);
+	padding: 0px 0px 0px 5px;
+}
+QComboBox:hover
+{
+	color: hsl(0, 0%, 5%);
+	border-color: hsl(210, 10%, 88%);
+	background-color: hsl(210, 10%, 98%);
+}
+QComboBox:on
+{
+	border-color: hsl(210, 100%, 40%);
+}
+QComboBox:disabled
+{
+	color: hsl(210, 0%, 60%);
+	border-color: hsl(210, 0%, 85%);
+	background-color: hsl(210, 0%, 95%);
+}
+QComboBox::drop-down
+{
+	width: 0px;
+	border: none;
+}
+QComboBox::down-arrow
+{
+	padding: 0px 32px 0px 0px;
+}
+QComboBox::down-arrow:on
+{
+}
+QComboBox QAbstractItemView
+{
+	color: hsl(0, 0%, 10%);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: hsl(210, 100%, 40%);
+	background-color: hsl(210, 5%, 100%);
+	outline: 0px;
+}
+QComboBox QAbstractItemView::item
+{
+	color: hsl(0, 0%, 10%);
+	border-style: none;
+	background-color: hsl(210, 5%, 100%);
+}
+QComboBox QAbstractItemView::item:hover
+{
+	color: hsl(0, 0%, 5%);
+	background-color: hsl(210, 10%, 98%);
+}
+QComboBox QAbstractItemView::item:selected
+{
+	color: #ffffff;
+	background-color: hsl(210, 100%, 40%);
+}
+
+/*通用页面滑动条*/
+/*Scroll Bar*/
+
+QScrollBar
+{
+    background-color: hsl(210, 5%, 100%);
+    padding: 12px 2px 12px 2px;
+	width: 12px;
+}
+QScrollBar::handle
+{
+    background-color: hsl(210, 5%, 80%);
+    border-radius: 2px; 
+}
+QScrollBar::handle:hover
+{
+    border-color: hsl(210, 10%, 78%);
+}
+QScrollBar::add-line:vertical
+{
+	height:12px;
+	width:12px;
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical
+{
+    height:12px;
+	width:12px;
+    subcontrol-position:top;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>450</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Config</string>
+    </property>
+    <widget class="QComboBox" name="cb_configChoose">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>280</width>
+       <height>30</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_editConfig">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>30</y>
+       <width>120</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Edit Config</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="l_diskIndex">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>75</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>14</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+padding: 0px;</string>
+     </property>
+     <property name="text">
+      <string>N</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="l_VolumeIndex">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>75</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>14</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+padding: 0px;</string>
+     </property>
+     <property name="text">
+      <string>N</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lb_disk">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>50</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+padding: 0px;</string>
+     </property>
+     <property name="text">
+      <string>Disk</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lb_volume">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>90</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+padding: 0px;</string>
+     </property>
+     <property name="text">
+      <string>Volume</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lb_diskLetter">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>90</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+padding: 0px;</string>
+     </property>
+     <property name="text">
+      <string>Disk Letter</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="l_diskLetter">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>75</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>14</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+padding: 0px;</string>
+     </property>
+     <property name="text">
+      <string>N</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lb_isAssigned">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel[isTrue=true]
+{
+	font: 700 50pt &quot;Microsoft YaHei UI&quot;;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 0px;
+	border-color: hsl(120, 100%, 30%);
+	background-color: hsl(120, 100%, 40%);
+}
+QLabel[isTrue=false]
+{
+	font: 700 50pt &quot;Microsoft YaHei UI&quot;;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 0px;
+	border-color: hsl(0, 100%, 30%);
+	background-color: hsl(0, 100%, 40%);
+}
+QLabel[isValid=false]
+{
+	font: 700 50pt &quot;Microsoft YaHei UI&quot;;
+	color: #ffffff;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 0px;
+	border-color: hsl(60, 100%, 30%);
+	background-color: hsl(60, 100%, 40%);
+}</string>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="isTrue" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="isValid" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_assign">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Assign</string>
+    </property>
+    <property name="isHighlighted" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="styleSheet">
+    <string notr="true">QStatusBar[isConnected=true]
+{
+	font: 700 10pt &quot;Microsoft YaHei UI&quot;;
+	color: #ffffff;
+	border-style: none;
+	background-color: hsl(120, 100%, 40%);
+}
+QStatusBar[isConnected=false]
+{
+	font: 700 10pt &quot;Microsoft YaHei UI&quot;;
+	color: #ffffff;
+	border-style: none;
+	background-color: hsl(0, 100%, 40%);
+}
+</string>
+   </property>
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="isConnected" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="VolumeSHController.qrc"/>
+ </resources>
+ <connections/>
+</ui>
